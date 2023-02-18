@@ -20,13 +20,17 @@ class SearchBar extends StatelessWidget {
       elevation: 5,
       child: Container(
         padding: const EdgeInsets.all(8.0),
-        height: Get.height * 0.05,
+        height: Get.height * 0.08,
         width: Get.width * 0.35,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(lable ?? '', style: TextStyle(color: AppColor.accentColor)),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(lable ?? '',
+                  style: TextStyle(color: AppColor.accentColor)),
+            ),
             SizedBox(
               width: Get.width * 0.2,
               child: TextField(

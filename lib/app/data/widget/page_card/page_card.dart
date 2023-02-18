@@ -75,6 +75,7 @@ class PageCardImage extends StatelessWidget {
             height: segmentWidth * 0.8,
             decoration: BoxDecoration(
               color: Colors.white,
+              // color: Colors.red,
               borderRadius: BorderRadius.circular(300),
             ),
           ),

@@ -8,6 +8,7 @@ ThemeData light = ThemeData(
   colorScheme: ColorScheme.light(
     primary: AppColor.colorSchemePrimary,
     secondary: AppColor.colorSchemeSecondary,
+    background: AppColor.backgroundColor,
   ),
   scaffoldBackgroundColor: AppColor.scaffoldBackgroundColor,
   textTheme: TextTheme(
