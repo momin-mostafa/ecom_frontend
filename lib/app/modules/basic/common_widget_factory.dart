@@ -1,3 +1,4 @@
+import 'package:ecom_frontend/app/data/enums/animated_container_type.dart';
 import 'package:ecom_frontend/app/data/widget/custom_animated_container/animated_container.dart';
 import 'package:ecom_frontend/app/data/widget/custom_animated_container/sidebar_for_animated_container.dart';
 import 'package:ecom_frontend/app/data/widget/page_card/page_card.dart';
@@ -10,6 +11,7 @@ class CommonWidgetFactory {
   static Widget createScaffold({Widget? body}) {
     return CustomScaffold(body: body);
   }
+
   // static Widget createScaffold_body({required Widget? body}){
   //   return CustomScaffold(body: body);
   // }
@@ -26,14 +28,30 @@ class CommonWidgetFactory {
     );
   }
 
-  static Widget createAnimatedContainer({Widget? child}) {
+  static Widget createMaleContainer({Widget? child}) {
     return CustomAnimatedContainer(
+      type: UserType.male,
       child: child ?? Container(),
     );
   }
 
-  static Widget createSideBar() {
-    return const SideBar();
+  static Widget createFemaleContainer({Widget? child}) {
+    return CustomAnimatedContainer(
+      type: UserType.female,
+      child: child ?? Container(),
+    );
+  }
+
+  static Widget createMaleSideBar() {
+    return const SideBar(
+      type: UserType.male
+    );
+  }
+
+  static Widget createFemaleSideBar() {
+    return const SideBar(
+        type: UserType.female
+    );
   }
 
   static Widget createPageCardButton({void Function()? onTap, String? text}) {
