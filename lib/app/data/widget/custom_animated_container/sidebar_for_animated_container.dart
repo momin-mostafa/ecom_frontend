@@ -21,7 +21,7 @@ class SideBar extends StatelessWidget {
       ),
       elevation: 3,
       child: Container(
-          height: Get.height * 0.87,
+          height: Get.height * 0.75,
           width: Get.width * 0.18,
           decoration: type == UserType.male
               ? const BoxDecoration(
