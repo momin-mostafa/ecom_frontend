@@ -1,7 +1,7 @@
-import 'package:ecom_frontend/app/data/common/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+@Deprecated('Just use Get.showOverlay instead of using setLoader on and off')
 void setLoader(bool show) {
   if (show) {
     Get.showOverlay(

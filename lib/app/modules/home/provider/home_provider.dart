@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 // import 'package:get/get_connect.dart';
 
 class HomeProvider {
-  ApiClient apiClient = ApiClient('https://fakestoreapi.com');
+  ApiClient apiClient = ApiClient();
 
   Future<ApiResponse> getProduct({String? query}) async {
     try {

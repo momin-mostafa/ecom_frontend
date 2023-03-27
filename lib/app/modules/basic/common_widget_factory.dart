@@ -42,15 +42,17 @@ class CommonWidgetFactory {
     );
   }
 
-  static Widget createMaleSideBar() {
-    return const SideBar(
-      type: UserType.male
+  static Widget createMaleSideBar({Widget? child}) {
+    return SideBar(
+      type: UserType.male,
+      child: child,
     );
   }
 
-  static Widget createFemaleSideBar() {
-    return const SideBar(
-        type: UserType.female
+  static Widget createFemaleSideBar({Widget? child}) {
+    return SideBar(
+      type: UserType.female,
+      child: child,
     );
   }
 
