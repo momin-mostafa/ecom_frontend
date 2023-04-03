@@ -16,7 +16,7 @@ class CustomAnimatedContainer extends StatefulWidget {
 }
 
 class _CustomAnimatedContainerState extends State<CustomAnimatedContainer> {
-  var height = Get.height * 0.9;
+  var height = Get.height * 0.79;
   var width = Get.width * 0.8;
 
   @override

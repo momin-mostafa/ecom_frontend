@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomScaffold extends StatelessWidget {
-  const CustomScaffold({super.key, this.body});
+  const CustomScaffold({super.key, this.body, this.floatingActionButton});
   final Widget? body;
+  final FloatingActionButton? floatingActionButton;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +45,7 @@ class CustomScaffold extends StatelessWidget {
         ),
       ),
       body: body,
+      floatingActionButton: floatingActionButton,
     );
   }
 

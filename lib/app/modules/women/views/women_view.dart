@@ -1,9 +1,12 @@
 import 'package:ecom_frontend/app/data/widget/scaffold/custom_scaffold.dart';
+import 'package:ecom_frontend/app/data/widget/sidebar_tile.dart';
 import 'package:ecom_frontend/app/modules/basic/common_widget_factory.dart';
 import 'package:ecom_frontend/app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+
+import '../../mens/views/mens_view.dart';
 
 class WomenView extends StatefulWidget {
   const WomenView({Key? key}) : super(key: key);
@@ -43,8 +46,21 @@ class _WomenViewState extends State<WomenView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CommonWidgetFactory.createFemaleContainer(),
-                      CommonWidgetFactory.createFemaleSideBar(),
+                      CommonWidgetFactory.createFemaleContainer(
+                        child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 230,
+                            childAspectRatio: 3 / 4,
+                          ),
+                          itemBuilder: (cntxt, index) =>
+                              const SingleProductCard(),
+                        ),
+                      ),
+                      CommonWidgetFactory.createFemaleSideBar(
+                          child: Column(
+                        children: const [SidebarTile(lable: 'lable')],
+                      )),
                     ],
                   ),
                 ],
