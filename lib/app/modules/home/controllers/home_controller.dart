@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:ecom_frontend/app/data/common/api_response.dart';
 import 'package:ecom_frontend/app/modules/home/model/product.dart';
@@ -30,7 +31,7 @@ class HomeController extends GetxController {
     ApiResponse apiResponse = await Get.find<HomeProvider>().getProduct();
     checkApi(apiResponse, () {
       for (var element in jsonDecode(apiResponse.response!.body)) {
-        print(element);
+        log(element, name: 'Element');
         temp.add(Product.fromJson(element));
       }
     });
