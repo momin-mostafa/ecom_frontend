@@ -4,7 +4,8 @@ import 'package:ecom_frontend/app/data/widget/custom_animated_container/sidebar_
 import 'package:ecom_frontend/app/data/widget/page_card/page_card.dart';
 import 'package:ecom_frontend/app/data/widget/page_card/page_card_button.dart';
 import 'package:ecom_frontend/app/data/widget/scaffold/custom_scaffold.dart';
-import 'package:ecom_frontend/app/data/widget/search_bar/search_bar.dart';
+import 'package:ecom_frontend/app/data/widget/search_bar/search_bar.dart'
+    as search;
 import 'package:flutter/material.dart';
 
 class CommonWidgetFactory {
@@ -22,7 +23,7 @@ class CommonWidgetFactory {
 
   static Widget createSearchBar(
       {TextEditingController? textEditingController, String? lable}) {
-    return SearchBar(
+    return search.SearchBar(
       textEditingController: textEditingController,
       lable: lable,
     );
