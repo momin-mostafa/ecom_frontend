@@ -15,7 +15,7 @@ class PageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final double cardHeight = Get.height * 0.8;
     final double cardWidht = Get.width;
-    final double segmentWidth = Get.width / 2.4;
+    final double segmentWidth = Get.width / 3;
     return Container(
       height: cardHeight,
       width: cardWidht,
@@ -27,10 +27,10 @@ class PageCard extends StatelessWidget {
             SizedBox(
               width: segmentWidth,
               height: cardHeight,
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   PageCardText(),
                   SizedBox(height: 20),
                   PageCardButton()
