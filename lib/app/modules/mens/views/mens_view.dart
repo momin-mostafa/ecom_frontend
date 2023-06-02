@@ -117,9 +117,9 @@ class SingleProductCard extends StatelessWidget {
               child: Text('Title'),
             ),
             const Text('Price'),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [Text('⭐️⭐️⭐️⭐️⭐️'), Text('5/5')],
+              children: [Text('⭐️⭐️⭐️⭐️⭐️'), Text('5/5')],
             ),
             // Spacer()
           ],

@@ -58,8 +58,8 @@ class _WomenViewState extends State<WomenView> {
                         ),
                       ),
                       CommonWidgetFactory.createFemaleSideBar(
-                          child: Column(
-                        children: const [SidebarTile(lable: 'lable')],
+                          child: const Column(
+                        children: [SidebarTile(lable: 'lable')],
                       )),
                     ],
                   ),

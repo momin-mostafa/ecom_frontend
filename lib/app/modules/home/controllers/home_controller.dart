@@ -41,7 +41,6 @@ class HomeController extends GetxController {
           var data = jsonDecode(apiResponse.response!.body);
           // print(data.runtimeType);
           for (var element in data) {
-            print(element.runtimeType);
             temp.add(Product.fromJson(element));
           }
         }

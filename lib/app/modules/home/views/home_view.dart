@@ -30,7 +30,7 @@ class HomeView extends GetView<HomeController> {
                     var product = controller.listOfProduct[index];
                     return Card(
                       elevation: 5,
-                      color: Color.fromARGB(174, 250, 249, 249),
+                      color: const Color.fromARGB(174, 250, 249, 249),
                       child: ListTile(
                         leading: Stack(
                           children: [
@@ -48,9 +48,17 @@ class HomeView extends GetView<HomeController> {
                               ),
                             ),
                             Container(
-                              height: 10,
-                              width: 10,
-                              color: AppColor.accentColor,
+                              height: 20,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                color: Colors.yellow.withOpacity(0.8),
+                                borderRadius: const BorderRadius.only(
+                                  bottomRight: Radius.circular(5),
+                                ),
+                              ),
+                              child: const Center(
+                                child: Text('30%'),
+                              ),
                             )
                           ],
                         ),
