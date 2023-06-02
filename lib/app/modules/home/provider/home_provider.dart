@@ -11,7 +11,7 @@ class HomeProvider {
       // Response response = await apiClient.get('/products');
       http.Response response =
           await apiClient.get('products', queryParameter: query);
-      // print(response.body);
+      print(response.body);
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.fromError(e);

@@ -27,30 +27,30 @@ class HomeView extends GetView<HomeController> {
                     child: ListTile(
                       leading: Card(
                         child: Image.network(
-                          product.image ?? '',
+                          product?.image ?? '',
                           height: Get.height * .5,
                           width: Get.width * .15,
                         ),
                       ),
-                      title: Text(product.title ?? ''),
-                      subtitle: Text(product.description ?? ''),
+                      title: Text(product?.title ?? ''),
+                      subtitle: Text(product?.description ?? ''),
                     ),
                   );
                 })))
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.showOverlay(
-              asyncFunction: () async {
-                await controller.getAllProduct();
-              },
-              loadingWidget: const Center(
-                child: CircularProgressIndicator.adaptive(),
-              ));
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Get.showOverlay(
+      //         asyncFunction: () async {
+      //           await controller.getAllProduct();
+      //         },
+      //         loadingWidget: const Center(
+      //           child: CircularProgressIndicator.adaptive(),
+      //         ));
+      //   },
+      // ),
     );
   }
 }
