@@ -13,30 +13,36 @@ class PageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double cardHeight = Get.height * 0.8;
-    final double cardWidht = Get.width;
-    final double segmentWidth = Get.width / 2.4;
+    // final double cardHeight = Get.height * 0.8;
+    // final double cardWidht = Get.width;
+    // final double segmentWidth = Get.width / 3;
+    double cardHeight = MediaQuery.sizeOf(context).width * 0.4;
+    double cardWidht = MediaQuery.sizeOf(context).width;
+    double segmentWidth = MediaQuery.sizeOf(context).width / 3;
     return Container(
       height: cardHeight,
       width: cardWidht,
       decoration: BoxDecoration(color: AppColor.primaryColor),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Get.width * 0.08),
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.sizeOf(context).width * 0.08),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               width: segmentWidth,
               height: cardHeight,
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   PageCardText(),
-                  SizedBox(height: 20),
+                  SizedBox(height: 40),
                   PageCardButton()
                 ],
               ),
             ),
+            const SizedBox(width: 80),
             PageCardImage(
               segmentWidth: segmentWidth,
               cardHeight: cardHeight,

@@ -12,22 +12,24 @@ class PageCardText extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        text: smallerText,
-        style: const TextStyle(
-          fontSize: 26,
-          fontWeight: FontWeight.w100,
-        ),
-        children: [
-          TextSpan(
-            text: '\n$text',
-            style: TextStyle(
-              color: AppColor.accentColor,
-              fontSize: 35,
-            ),
+    return FittedBox(
+      child: RichText(
+        text: TextSpan(
+          text: smallerText,
+          style: const TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.w100,
           ),
-        ],
+          children: [
+            TextSpan(
+              text: '\n$text',
+              style: TextStyle(
+                color: AppColor.accentColor,
+                fontSize: 35,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

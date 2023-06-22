@@ -21,23 +21,20 @@ class CustomScaffold extends StatelessWidget {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            button(
-              text: "Home",
-              onPressed: () => Get.offAllNamed(Routes.HOME),
-            ),
-            button(
+            Button(text: "Home", onPressed: () => Get.offAllNamed(Routes.HOME)),
+            Button(
               text: 'About us',
               onPressed: () => Get.offAllNamed(Routes.ABOUT),
             ),
-            button(
+            Button(
               text: 'Men\'s Corner',
               onPressed: () => Get.offAllNamed(Routes.MENS),
             ),
-            button(
+            Button(
               text: 'Women\'s Corner',
               onPressed: () => Get.offAllNamed(Routes.WOMEN),
             ),
-            button(
+            Button(
               text: 'Contact Us',
               onPressed: () => Get.offAllNamed(Routes.CONTACT),
             ),
@@ -48,11 +45,20 @@ class CustomScaffold extends StatelessWidget {
       floatingActionButton: floatingActionButton,
     );
   }
+}
 
-  Widget button({
-    void Function()? onPressed,
-    String text = '',
-  }) {
+class Button extends StatelessWidget {
+  const Button({
+    super.key,
+    required this.onPressed,
+    required this.text,
+  });
+
+  final void Function()? onPressed;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
     var background = MaterialStateProperty.all(AppColor.backgroundColor);
     return Padding(
       padding: const EdgeInsets.all(8.0),
