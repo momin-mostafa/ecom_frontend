@@ -70,6 +70,10 @@ class HomeTile extends StatelessWidget {
           ),
           onPressed: () {
             Get.find<UserController>().cartItems.add(product!);
+            Get.showSnackbar(GetSnackBar(
+              title: 'Item Added',
+              message: '${product?.title} ',
+            ));
           },
         ),
       ),

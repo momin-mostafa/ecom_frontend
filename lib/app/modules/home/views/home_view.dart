@@ -42,13 +42,6 @@ class HomeView extends GetView<HomeController> {
         child: const Icon(Icons.shopping_cart),
         onPressed: () {
           cart();
-          // Get.showOverlay(
-          //     asyncFunction: () async {
-          //       await controller.getAllProduct();
-          //     },
-          //     loadingWidget: const Center(
-          //       child: CircularProgressIndicator.adaptive(),
-          //     ));
         },
       ),
     );
@@ -60,51 +53,38 @@ class HomeView extends GetView<HomeController> {
       content: SizedBox(
         height: Get.height * 0.8,
         width: Get.height * 0.9,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            (Get.find<UserController>().cartItems.isEmpty)
-                ? const Text('Opps your cart is empty')
-                : ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: Get.find<UserController>().cartItems.length,
-                    itemBuilder: (context, index) {
-                      return Stack(
-                        children: [
-                          CartProductTile(
-                              product:
-                                  Get.find<UserController>().cartItems[index]),
-                          Positioned.fill(
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: IconButton(
-                                onPressed: () {
-                                  Get.find<UserController>()
-                                      .cartItems
-                                      .removeAt(index);
-                                  Get.back();
-                                  cart();
-                                },
-                                icon: const Icon(
-                                  Icons.remove,
-                                  color: Colors.red,
-                                ),
-                              ),
+        child: (Get.find<UserController>().cartItems.isEmpty)
+            ? const Text('Opps your cart is empty')
+            : ListView.builder(
+                shrinkWrap: true,
+                itemCount: Get.find<UserController>().cartItems.length,
+                itemBuilder: (context, index) {
+                  return Stack(
+                    children: [
+                      CartProductTile(
+                          product: Get.find<UserController>().cartItems[index]),
+                      Positioned.fill(
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: IconButton(
+                            onPressed: () {
+                              Get.find<UserController>()
+                                  .cartItems
+                                  .removeAt(index);
+                              Get.back();
+                              cart();
+                            },
+                            icon: const Icon(
+                              Icons.remove,
+                              color: Colors.red,
                             ),
-                          )
-                        ],
-                      );
-                    },
-                  ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                "Check Out",
-                style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                      )
+                    ],
+                  );
+                },
               ),
-            )
-          ],
-        ),
       ),
     );
   }
