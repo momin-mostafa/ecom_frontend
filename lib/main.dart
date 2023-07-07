@@ -11,6 +11,7 @@ void main() {
 
   runApp(
     GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: light,
       title: "Web World",
       initialRoute: AppPages.INITIAL,

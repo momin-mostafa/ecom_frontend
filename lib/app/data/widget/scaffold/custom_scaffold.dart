@@ -1,3 +1,4 @@
+import 'package:ecom_frontend/app/data/common/user_controller.dart';
 import 'package:ecom_frontend/app/routes/app_pages.dart';
 import 'package:ecom_frontend/app/utils/app_color.dart';
 import 'package:ecom_frontend/app/utils/app_const.dart';
@@ -40,6 +41,20 @@ class CustomScaffold extends StatelessWidget {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              if (Get.find<UserController>().isUserLogedIn) {
+                Get.toNamed(Routes.PROFILE);
+              } else {
+                Get.toNamed(Routes.LOGIN);
+              }
+            },
+            icon: Get.find<UserController>().isUserLogedIn
+                ? const Icon(Icons.person_outlined)
+                : const Icon(Icons.login),
+          ),
+        ],
       ),
       body: body,
       floatingActionButton: floatingActionButton,
