@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecom_frontend/app/data/common/user_controller.dart';
 import 'package:ecom_frontend/app/modules/home/model/product.dart';
 import 'package:flutter/material.dart';
@@ -74,11 +76,12 @@ class HomeTile extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: () {
+            log('Item added');
             Get.find<UserController>().cartItems.add(product!);
-            Get.showSnackbar(GetSnackBar(
-              title: 'Item Added',
-              message: '${product?.name} ',
-            ));
+            // Get.showSnackbar(GetSnackBar(
+            //   title: 'Item Added',
+            //   message: '${product?.name} ',
+            // ));
           },
         ),
       ),

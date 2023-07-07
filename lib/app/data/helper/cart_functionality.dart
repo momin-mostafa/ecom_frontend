@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 import 'package:ecom_frontend/app/data/common/user_controller.dart';
 import 'package:ecom_frontend/app/data/widget/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Future<dynamic> cart() {
+  log('cart called ', name: 'Cart Function');
   return Get.defaultDialog(
     title: "Cart List",
     content: SizedBox(

@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/about/bindings/about_binding.dart';
 import '../modules/about/views/about_view.dart';
+import '../modules/check_out/bindings/check_out_binding.dart';
+import '../modules/check_out/views/check_out_view.dart';
 import '../modules/contact/bindings/contact_binding.dart';
 import '../modules/contact/views/contact_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -58,6 +60,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHECK_OUT,
+      page: () => const CheckOutView(),
+      binding: CheckOutBinding(),
     ),
   ];
 }

@@ -39,10 +39,7 @@ class HomeView extends GetView<HomeController> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.shopping_cart),
-        onPressed: () {
-          cart();
-          // test();
-        },
+        onPressed: () => cart(),
       ),
     );
   }
