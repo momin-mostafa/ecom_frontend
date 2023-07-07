@@ -29,7 +29,7 @@ class HomeController extends GetxController {
   Future getAllProduct() async {
     List<Product> temp = [];
     // Product? temp;
-    ApiResponse apiResponse = await Get.find<HomeProvider>().getProduct();
+    ApiResponse apiResponse = await Get.find<HomeProvider>().testCallToLocal();
     checkApi(apiResponse, () {
       // for (var element in jsonDecode(apiResponse.response!.body)) {
       // log(element, name: 'Element');

@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class Product {
   int? id;
-  String? title;
-  double? price;
+  String? name;
+  String? price;
   String? description;
   String? category;
   String? image;
@@ -10,7 +10,7 @@ class Product {
 
   Product(
       {this.id,
-      this.title,
+      this.name,
       this.price,
       this.description,
       this.category,
@@ -19,7 +19,7 @@ class Product {
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    title = json['title'];
+    name = json['name'];
     price = json['price'];
     description = json['description'];
     category = json['category'];
@@ -28,9 +28,10 @@ class Product {
   }
 
   Map<String, dynamic> toJson() {
+    // {"id":1,"name":"product1","description":"hello product description","picture":null,"price":"100","discount":0.0,"inStock":false}
     final Map<String, dynamic> data = {};
     data['id'] = id;
-    data['title'] = title;
+    data['name'] = name;
     data['price'] = price;
     data['description'] = description;
     data['category'] = category;
@@ -46,7 +47,7 @@ class Product {
     if (identical(this, other)) return true;
 
     return other.id == id &&
-        other.title == title &&
+        other.name == name &&
         other.price == price &&
         other.description == description &&
         other.category == category &&
@@ -57,7 +58,7 @@ class Product {
   @override
   int get hashCode {
     return id.hashCode ^
-        title.hashCode ^
+        name.hashCode ^
         price.hashCode ^
         description.hashCode ^
         category.hashCode ^

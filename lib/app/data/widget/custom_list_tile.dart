@@ -11,7 +11,7 @@ class CartProductTile extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
-          title: Text(product.title ?? 'title'),
+          title: Text(product.name ?? 'title'),
           leading: Image.network(
             product.image ?? '',
             errorBuilder: (context, error, stackTrace) => Image.asset(
