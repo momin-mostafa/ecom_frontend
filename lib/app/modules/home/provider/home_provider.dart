@@ -17,4 +17,14 @@ class HomeProvider {
       return ApiResponse.fromError(e);
     }
   }
+
+  testCallToLocal() async {
+    var response = await http.get(
+        Uri.parse('http://127.0.0.1:8000/api/product-list/'),
+        headers: {'Content-Type': 'application/json', 'Accept': '*/*'});
+    if (response.statusCode == 200) {
+      return ApiResponse.withSuccess(response);
+    }
+    return ApiResponse.fromError("Response not 200");
+  }
 }

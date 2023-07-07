@@ -10,6 +10,9 @@ abstract class Routes {
   static const CONTACT = _Paths.CONTACT;
   static const MENS = _Paths.MENS;
   static const WOMEN = _Paths.WOMEN;
+  static const LOGIN = _Paths.LOGIN;
+  static const PROFILE = _Paths.PROFILE;
+  static const CHECK_OUT = _Paths.CHECK_OUT;
 }
 
 abstract class _Paths {
@@ -19,4 +22,7 @@ abstract class _Paths {
   static const CONTACT = '/contact';
   static const MENS = '/mens';
   static const WOMEN = '/women';
+  static const LOGIN = '/login';
+  static const PROFILE = '/profile';
+  static const CHECK_OUT = '/check-out';
 }

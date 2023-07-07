@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecom_frontend/app/data/common/user_controller.dart';
 import 'package:ecom_frontend/app/modules/home/model/product.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +34,11 @@ class HomeTile extends StatelessWidget {
                 // height: Get.height * .5,
                 width: 92, // Get.width * ,
                 // height: 250,
+                errorBuilder: (context, error, stackTrace) => const SizedBox(
+                  height: 10,
+                  width: 10,
+                  child: Placeholder(),
+                ),
               ),
             ),
             Container(
@@ -51,7 +58,7 @@ class HomeTile extends StatelessWidget {
         ),
         title: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(product?.title ?? ''),
+          child: Text(product?.name ?? ''),
         ),
         subtitle: Card(
           color: AppColor.accentColor,
@@ -69,11 +76,12 @@ class HomeTile extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: () {
+            log('Item added');
             Get.find<UserController>().cartItems.add(product!);
-            Get.showSnackbar(GetSnackBar(
-              title: 'Item Added',
-              message: '${product?.title} ',
-            ));
+            // Get.showSnackbar(GetSnackBar(
+            //   title: 'Item Added',
+            //   message: '${product?.name} ',
+            // ));
           },
         ),
       ),
