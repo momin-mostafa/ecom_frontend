@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:ecom_frontend/app/data/widget/scaffold/custom_scaffold.dart';
 import 'package:ecom_frontend/app/data/widget/sidebar_tile.dart';
 import 'package:ecom_frontend/app/modules/basic/common_widget_factory.dart';
+import 'package:ecom_frontend/app/modules/home/model/product.dart';
 import 'package:ecom_frontend/app/modules/mens/controllers/mens_controller.dart';
 import 'package:ecom_frontend/app/utils/app_color.dart';
 import 'package:ecom_frontend/app/utils/app_const.dart';
@@ -50,34 +51,22 @@ class _MensViewState extends State<MensView> {
                         log('message', name: 'onTap');
                       },
                     ),
-                    SidebarTile(
-                      lable: "hello World",
-                      onTap: () {
-                        log('message', name: 'onTap');
-                      },
-                    ),
-                    SidebarTile(
-                      lable: "hello World",
-                      onTap: () {
-                        log('message', name: 'onTap');
-                      },
-                    ),
-                    SidebarTile(
-                      lable: "hello World",
-                      onTap: () {
-                        log('message', name: 'onTap');
-                      },
-                    ),
                   ],
                 )),
-                CommonWidgetFactory.createMaleContainer(
-                  child: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 230,
-                      childAspectRatio: 3 / 4,
+                GetBuilder<MensController>(
+                  builder: (controller) =>
+                      CommonWidgetFactory.createMaleContainer(
+                    child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 230,
+                        childAspectRatio: 3 / 4,
+                      ),
+                      itemCount: controller.listOfMaleProduct.length,
+                      itemBuilder: (cntxt, index) => SingleProductCard(
+                        product: controller.listOfMaleProduct[index],
+                      ),
                     ),
-                    itemBuilder: (cntxt, index) => const SingleProductCard(),
                   ),
                 ),
               ],
@@ -92,7 +81,10 @@ class _MensViewState extends State<MensView> {
 class SingleProductCard extends StatelessWidget {
   const SingleProductCard({
     super.key,
+    required this.product,
   });
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -112,11 +104,11 @@ class SingleProductCard extends StatelessWidget {
                 child: Image.asset(AppConst.demoModel),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 4.0),
-              child: Text('Title'),
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: Text(product.name ?? ''),
             ),
-            const Text('Price'),
+            Text(product.price ?? ''),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [Text('⭐️⭐️⭐️⭐️⭐️'), Text('5/5')],

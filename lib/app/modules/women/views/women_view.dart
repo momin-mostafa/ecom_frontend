@@ -1,6 +1,7 @@
 import 'package:ecom_frontend/app/data/widget/scaffold/custom_scaffold.dart';
 import 'package:ecom_frontend/app/data/widget/sidebar_tile.dart';
 import 'package:ecom_frontend/app/modules/basic/common_widget_factory.dart';
+import 'package:ecom_frontend/app/modules/women/controllers/women_controller.dart';
 import 'package:ecom_frontend/app/utils/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -46,15 +47,20 @@ class _WomenViewState extends State<WomenView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CommonWidgetFactory.createFemaleContainer(
-                        child: GridView.builder(
-                          gridDelegate:
-                              const SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 230,
-                            childAspectRatio: 3 / 4,
+                      GetBuilder<WomenController>(
+                        builder: (controller) =>
+                            CommonWidgetFactory.createFemaleContainer(
+                          child: GridView.builder(
+                            itemCount: controller.listOfWomanProduct.length,
+                            gridDelegate:
+                                const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 230,
+                              childAspectRatio: 3 / 4,
+                            ),
+                            itemBuilder: (cntxt, index) => SingleProductCard(
+                              product: controller.listOfWomanProduct[index],
+                            ),
                           ),
-                          itemBuilder: (cntxt, index) =>
-                              const SingleProductCard(),
                         ),
                       ),
                       CommonWidgetFactory.createFemaleSideBar(
