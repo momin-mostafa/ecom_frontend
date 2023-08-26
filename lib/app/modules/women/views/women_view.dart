@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../data/helper/cart_functionality.dart';
 import '../../mens/views/mens_view.dart';
 
 class WomenView extends StatefulWidget {
@@ -74,6 +75,10 @@ class _WomenViewState extends State<WomenView> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.shopping_cart),
+        onPressed: () => cart(),
       ),
     );
   }

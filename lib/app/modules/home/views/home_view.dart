@@ -2,6 +2,7 @@ import 'package:ecom_frontend/app/data/helper/cart_functionality.dart';
 import 'package:ecom_frontend/app/modules/basic/common_widget_factory.dart';
 
 import 'package:ecom_frontend/app/data/widget/scaffold/custom_scaffold.dart';
+import 'package:ecom_frontend/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

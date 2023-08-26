@@ -62,6 +62,7 @@ class LoginView extends GetView<LoginController> {
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width * 0.25,
                       child: TextField(
+                        obscureText: true,
                         controller: controller.password,
                         decoration: const InputDecoration(
                           label: Text('Password'),
@@ -82,6 +83,29 @@ class LoginView extends GetView<LoginController> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomCard extends StatelessWidget {
+  const CustomCard({
+    super.key,
+    this.child,
+  });
+
+  final Widget? child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+          height: MediaQuery.sizeOf(context).height * 0.8,
+          width: MediaQuery.sizeOf(context).width * 0.9,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.4),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: child),
     );
   }
 }

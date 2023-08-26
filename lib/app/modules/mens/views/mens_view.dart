@@ -10,6 +10,8 @@ import 'package:ecom_frontend/app/utils/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../data/helper/cart_functionality.dart';
+
 class MensView extends StatefulWidget {
   const MensView({Key? key}) : super(key: key);
 
@@ -74,6 +76,10 @@ class _MensViewState extends State<MensView> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.shopping_cart),
+        onPressed: () => cart(),
+      ),
     );
   }
 }
@@ -109,10 +115,10 @@ class SingleProductCard extends StatelessWidget {
               child: Text(product.name ?? ''),
             ),
             Text(product.price ?? ''),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text('⭐️⭐️⭐️⭐️⭐️'), Text('5/5')],
-            ),
+            // const Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [Text('⭐️⭐️⭐️⭐️⭐️'), Text('5/5')],
+            // ),
             // Spacer()
           ],
         ),
